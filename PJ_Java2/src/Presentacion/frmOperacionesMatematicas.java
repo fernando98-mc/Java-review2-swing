@@ -71,6 +71,11 @@ public class frmOperacionesMatematicas extends javax.swing.JFrame {
         });
 
         btnMultiplicar.setText("Multiplicar");
+        btnMultiplicar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMultiplicarMouseClicked(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Resultado");
@@ -156,6 +161,14 @@ public class frmOperacionesMatematicas extends javax.swing.JFrame {
         double rResultado = rValor1 - rValor2;
         txtResultado.setText(String.valueOf(rResultado));
     }//GEN-LAST:event_btnRestarMouseClicked
+
+    private void btnMultiplicarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMultiplicarMouseClicked
+        // TODO add your handling code here:
+        double mValor1 = Double.parseDouble(txtValor1.getText());
+        double mValor2 = Double.parseDouble(txtValor2.getText());
+        double mResultado = mValor1 * mValor2;
+        txtResultado.setText(String.valueOf(mResultado));
+    }//GEN-LAST:event_btnMultiplicarMouseClicked
 
     /**
      * @param args the command line arguments
