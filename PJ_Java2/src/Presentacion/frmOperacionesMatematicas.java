@@ -52,6 +52,11 @@ public class frmOperacionesMatematicas extends javax.swing.JFrame {
         });
 
         btnSumar.setText("Sumar");
+        btnSumar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSumarMouseClicked(evt);
+            }
+        });
         btnSumar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSumarActionPerformed(evt);
@@ -129,6 +134,15 @@ public class frmOperacionesMatematicas extends javax.swing.JFrame {
     private void btnSumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSumarActionPerformed
+
+    private void btnSumarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSumarMouseClicked
+        // TODO add your handling code here:
+        double sValor1 = Double.parseDouble(txtValor1.getText());
+        double sValor2 = Double.parseDouble(txtValor2.getText());
+        double sResultado = sValor1 + sValor2;
+        
+        txtResultado.setText(String.valueOf(sResultado));
+    }//GEN-LAST:event_btnSumarMouseClicked
 
     /**
      * @param args the command line arguments
