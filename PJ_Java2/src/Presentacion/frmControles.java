@@ -15,6 +15,9 @@ public class frmControles extends javax.swing.JFrame {
      */
     public frmControles() {
         initComponents();
+        
+        rbtGrupo.add(rbtFemenino);
+        rbtGrupo.add(rbtMasculino);
     }
 
     /**
@@ -26,10 +29,19 @@ public class frmControles extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        rbtGrupo = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         rbtMasculino = new javax.swing.JRadioButton();
         rbtFemenino = new javax.swing.JRadioButton();
+        jLabel2 = new javax.swing.JLabel();
+        chkBaseDeDatos = new javax.swing.JCheckBox();
+        chkDesarrollador = new javax.swing.JCheckBox();
+        chkAnalista = new javax.swing.JCheckBox();
+        btnProcesarDatos = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtResultadoGenero = new javax.swing.JTextField();
+        txtResultadoCarrera = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Controles");
@@ -41,37 +53,122 @@ public class frmControles extends javax.swing.JFrame {
 
         rbtFemenino.setText("Femenino");
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setText("Carreras profesionales : ");
+
+        chkBaseDeDatos.setText("Base de datos");
+
+        chkDesarrollador.setText("Desarrollador");
+
+        chkAnalista.setText("Analista");
+
+        btnProcesarDatos.setText("Procesar Datos");
+        btnProcesarDatos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnProcesarDatosMouseClicked(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setText("Seleccion de genero fue : ");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setText("Seleccion de carrera fue : ");
+
+        txtResultadoGenero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtResultadoGeneroActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtResultadoCarrera, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtResultadoGenero)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(92, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rbtFemenino)
-                            .addComponent(rbtMasculino))))
-                .addContainerGap(200, Short.MAX_VALUE))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(chkBaseDeDatos)
+                                .addGap(18, 18, 18)
+                                .addComponent(chkDesarrollador)
+                                .addGap(18, 18, 18)
+                                .addComponent(chkAnalista)))
+                        .addGap(72, 72, 72))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnProcesarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(121, 121, 121))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(rbtMasculino)
+                        .addGap(18, 18, 18)
+                        .addComponent(rbtFemenino)
+                        .addGap(140, 140, 140))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(rbtMasculino)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rbtFemenino)
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rbtMasculino)
+                    .addComponent(rbtFemenino))
+                .addGap(24, 24, 24)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chkBaseDeDatos)
+                    .addComponent(chkDesarrollador)
+                    .addComponent(chkAnalista))
+                .addGap(24, 24, 24)
+                .addComponent(btnProcesarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtResultadoGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtResultadoCarrera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtResultadoGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtResultadoGeneroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtResultadoGeneroActionPerformed
+
+    private void btnProcesarDatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProcesarDatosMouseClicked
+        // TODO add your handling code here:
+        
+        if(rbtFemenino.isSelected() == true){
+            txtResultadoGenero.setText("Femenino c:");
+        } else if (rbtMasculino.isSelected() == true){
+            txtResultadoGenero.setText("Masculino c:");
+        } else {
+            txtResultadoGenero.setText("Falto seleccionar");
+        }
+        
+    }//GEN-LAST:event_btnProcesarDatosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -109,9 +206,18 @@ public class frmControles extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton btnProcesarDatos;
+    private javax.swing.JCheckBox chkAnalista;
+    private javax.swing.JCheckBox chkBaseDeDatos;
+    private javax.swing.JCheckBox chkDesarrollador;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JRadioButton rbtFemenino;
+    private javax.swing.ButtonGroup rbtGrupo;
     private javax.swing.JRadioButton rbtMasculino;
+    private javax.swing.JTextField txtResultadoCarrera;
+    private javax.swing.JTextField txtResultadoGenero;
     // End of variables declaration//GEN-END:variables
 }
