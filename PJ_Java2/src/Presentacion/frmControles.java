@@ -160,6 +160,12 @@ public class frmControles extends javax.swing.JFrame {
     private void btnProcesarDatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProcesarDatosMouseClicked
         // TODO add your handling code here:
         
+        // Limpiar los espacios para texto
+        txtResultadoGenero.setText("");
+        txtResultadoCarrera.setText("");
+        
+        
+        // Valida los datos del genero
         if(rbtFemenino.isSelected() == true){
             txtResultadoGenero.setText("Femenino c:");
         } else if (rbtMasculino.isSelected() == true){
@@ -168,6 +174,7 @@ public class frmControles extends javax.swing.JFrame {
             txtResultadoGenero.setText("Falto seleccionar");
         }
         
+        // Validar y asignar los checkBox a las carreras
         if(chkBaseDeDatos.isSelected() ==  true){
             txtResultadoCarrera.setText("Administrador de base de datos");
         }
