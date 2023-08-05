@@ -36,6 +36,11 @@ public class frmListado extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         lstPaises = new javax.swing.JList<>();
+        jLabel2 = new javax.swing.JLabel();
+        txtNombres = new javax.swing.JTextField();
+        btnNombreAgregar = new javax.swing.JButton();
+        btnNombreEliminar = new javax.swing.JButton();
+        cmbNombres = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Lista paises");
@@ -59,6 +64,23 @@ public class frmListado extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(lstPaises);
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setText("Registrar nombres");
+
+        btnNombreAgregar.setText("Agregar");
+        btnNombreAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnNombreAgregarMouseClicked(evt);
+            }
+        });
+
+        btnNombreEliminar.setText("Eliminar");
+        btnNombreEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnNombreEliminarMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -75,7 +97,18 @@ public class frmListado extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGap(37, 37, 37)
                         .addComponent(txtPais)))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addGap(83, 83, 83)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnNombreAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnNombreEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbNombres, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,14 +116,20 @@ public class frmListado extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txtPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNombreAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnNombreEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pack();
@@ -111,6 +150,21 @@ public class frmListado extends javax.swing.JFrame {
         model.removeElementAt(lstPaises.getSelectedIndex());
         
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void btnNombreAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNombreAgregarMouseClicked
+        // TODO add your handling code here:
+        
+        cmbNombres.addItem(txtNombres.getText());
+        txtNombres.setText("");
+        
+    }//GEN-LAST:event_btnNombreAgregarMouseClicked
+
+    private void btnNombreEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNombreEliminarMouseClicked
+        // TODO add your handling code here:
+        
+        cmbNombres.removeItemAt(cmbNombres.getSelectedIndex());
+        
+    }//GEN-LAST:event_btnNombreEliminarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -148,11 +202,16 @@ public class frmListado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnNombreAgregar;
+    private javax.swing.JButton btnNombreEliminar;
+    private javax.swing.JComboBox<String> cmbNombres;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList<String> lstPaises;
+    private javax.swing.JTextField txtNombres;
     private javax.swing.JTextField txtPais;
     // End of variables declaration//GEN-END:variables
 }
