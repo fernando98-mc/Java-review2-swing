@@ -35,6 +35,12 @@ public class fmrControlesVarios extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Contador");
 
+        spnContador.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                spnContadorStateChanged(evt);
+            }
+        });
+
         lblResultado.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblResultado.setText("Resultado del contador : 0");
 
@@ -50,8 +56,8 @@ public class fmrControlesVarios extends javax.swing.JFrame {
                         .addGap(48, 48, 48)
                         .addComponent(spnContador, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addComponent(lblResultado)))
+                        .addGap(71, 71, 71)
+                        .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -61,14 +67,21 @@ public class fmrControlesVarios extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(spnContador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
+                .addGap(41, 41, 41)
                 .addComponent(lblResultado)
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void spnContadorStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spnContadorStateChanged
+        // TODO add your handling code here:
+        
+        // getValue obtiene los datos del spinner y los pasa a string con toString
+        lblResultado.setText("Resultado del contador : " + spnContador.getValue().toString());
+    }//GEN-LAST:event_spnContadorStateChanged
 
     /**
      * @param args the command line arguments
