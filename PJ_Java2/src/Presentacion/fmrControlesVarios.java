@@ -50,7 +50,9 @@ public class fmrControlesVarios extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Contador 2");
 
+        scrBarra.setBlockIncrement(0);
         scrBarra.setOrientation(javax.swing.JScrollBar.HORIZONTAL);
+        scrBarra.setVisibleAmount(0);
         scrBarra.addAdjustmentListener(new java.awt.event.AdjustmentListener() {
             public void adjustmentValueChanged(java.awt.event.AdjustmentEvent evt) {
                 scrBarraAdjustmentValueChanged(evt);

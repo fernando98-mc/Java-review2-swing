@@ -108,7 +108,9 @@
     </Component>
     <Component class="javax.swing.JScrollBar" name="scrBarra">
       <Properties>
+        <Property name="blockIncrement" type="int" value="0"/>
         <Property name="orientation" type="int" value="0"/>
+        <Property name="visibleAmount" type="int" value="0"/>
       </Properties>
       <Events>
         <EventHandler event="adjustmentValueChanged" listener="java.awt.event.AdjustmentListener" parameters="java.awt.event.AdjustmentEvent" handler="scrBarraAdjustmentValueChanged"/>
