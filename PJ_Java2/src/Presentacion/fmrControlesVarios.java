@@ -29,6 +29,9 @@ public class fmrControlesVarios extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         spnContador = new javax.swing.JSpinner();
         lblResultado = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        scrBarra = new javax.swing.JScrollBar();
+        lblScbResultado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,6 +47,19 @@ public class fmrControlesVarios extends javax.swing.JFrame {
         lblResultado.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblResultado.setText("Resultado del contador : 0");
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setText("Contador 2");
+
+        scrBarra.setOrientation(javax.swing.JScrollBar.HORIZONTAL);
+        scrBarra.addAdjustmentListener(new java.awt.event.AdjustmentListener() {
+            public void adjustmentValueChanged(java.awt.event.AdjustmentEvent evt) {
+                scrBarraAdjustmentValueChanged(evt);
+            }
+        });
+
+        lblScbResultado.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblScbResultado.setText("Resultado del scrollBar : 0");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -51,14 +67,24 @@ public class fmrControlesVarios extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(jLabel1)
-                        .addGap(48, 48, 48)
-                        .addComponent(spnContador, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(71, 71, 71)
-                        .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(48, 48, 48)
+                                .addComponent(spnContador, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(scrBarra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(31, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblScbResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(80, 80, 80))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -69,7 +95,13 @@ public class fmrControlesVarios extends javax.swing.JFrame {
                     .addComponent(spnContador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addComponent(lblResultado)
-                .addContainerGap(165, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(scrBarra, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(lblScbResultado)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         pack();
@@ -81,7 +113,15 @@ public class fmrControlesVarios extends javax.swing.JFrame {
         
         // getValue obtiene los datos del spinner y los pasa a string con toString
         lblResultado.setText("Resultado del contador : " + spnContador.getValue().toString());
+        
     }//GEN-LAST:event_spnContadorStateChanged
+
+    private void scrBarraAdjustmentValueChanged(java.awt.event.AdjustmentEvent evt) {//GEN-FIRST:event_scrBarraAdjustmentValueChanged
+        // TODO add your handling code here:
+        
+        lblScbResultado.setText("Resultado scrollBar : " + scrBarra.getValue());
+        
+    }//GEN-LAST:event_scrBarraAdjustmentValueChanged
 
     /**
      * @param args the command line arguments
@@ -120,7 +160,10 @@ public class fmrControlesVarios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblResultado;
+    private javax.swing.JLabel lblScbResultado;
+    private javax.swing.JScrollBar scrBarra;
     private javax.swing.JSpinner spnContador;
     // End of variables declaration//GEN-END:variables
 }
